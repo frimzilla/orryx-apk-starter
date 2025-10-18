@@ -1,0 +1,23 @@
+{
+  "name": "orryx-apk-starter",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:android:internal": "eas build -p android --profile internal --non-interactive",
+    "build:android:prod": "eas build -p android --profile production --non-interactive"
+  },
+  "dependencies": {
+    "expo": "^51.0.18",
+    "expo-status-bar": "~1.12.1",
+    "react": "18.2.0",
+    "react-native": "0.74.5"
+  },
+  "devDependencies": {
+    "eas-cli": "^13.0.0"
+  }
+}
