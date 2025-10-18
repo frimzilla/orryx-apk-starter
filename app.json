@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Orryx Demo",
-    "slug": "orryx-demo",
+    "slug": "project-obsidian-oryyx",
     "scheme": "orryx",
     "version": "0.1.0",
     "orientation": "portrait",
@@ -12,15 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#0b0f1a"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
+    "updates": { "fallbackToCacheTimeout": 0 },
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true },
     "android": {
       "package": "com.orryx.demo",
       "adaptiveIcon": {
@@ -30,7 +24,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "7353e96d-8887-4416-a8c1-e4eccb7d82a3"
+        "projectId": "YOUR_EAS_PROJECT_ID"
       }
     }
   }
