@@ -2,7 +2,7 @@
   "expo": {
     "name": "Orryx Demo",
     "slug": "project-obsidian-oryyx",
-    "scheme": "orryx",
+    "owner": "naktak00",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
