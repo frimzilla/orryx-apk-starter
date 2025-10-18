@@ -1,0 +1,40 @@
+name: Build Android Internal APK (EAS)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-android-internal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          npm i -g eas-cli
+          npm ci || npm install
+      - name: Expo Auth (machine)
+        run: |
+          eas whoami || true
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: EAS Build (Android internal APK)
+        run: |
+          eas build -p android --profile internal --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: Download latest build artifact
+        run: |
+          mkdir -p dist
+          eas build:download --platform android --latest --output dist/
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: orryx-internal-apk
+          path: dist/*.apk
